@@ -1,0 +1,133 @@
+.header__menu {
+    width: 5rem;
+    height: 5rem;
+    background-image: url("../img/Menu.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+}
+
+.container__button:checked ~ .container__label > .header__menu{
+    background-image: url('../img/Menu\ Aberto.svg');
+}
+.container__button:checked ~ .container__label {
+    background: var(--linear-blue);
+}
+.header {
+    background-color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.menu__image {
+    padding: 1em;
+}
+
+.menu__list {
+    display: none;
+    position: absolute;
+    top: 100%;
+    width: 60vw;
+}
+
+.container__button:checked ~.menu__list {
+    display: block;
+}
+
+.menu__list__title, .menu__list__item {
+    padding: 1em;
+    background-color: var(--white);
+}
+
+.menu__list__title {
+    color: var(--orange-title);
+    font-weight: 700;
+}
+
+.menu__list__item a{
+    background: var(--linear-blue);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container__button, .container__title, .options, .container__text{
+    display: none;
+}
+
+@media screen and (min-width: 1024px) {
+    .container__title {
+        font-family:var(--secondary-font);
+        font-size: 1.87rem;
+        font-weight: 400;
+        display: block;
+        margin-top: 0.5rem;
+    }
+    .container__title b{
+        font-weight: 700;
+    }
+    .options {
+        display: flex;
+    }
+    .options__list {
+        padding: 0 1em;
+        text-transform: uppercase;
+    }
+    .options__list a {
+        text-decoration: none;
+        color: black;
+    }
+    .favorite, .header__menu, .button__options {
+        display: none;
+    }
+
+    .button__options:checked ~ .menu__list{
+        display: block;
+        width: auto;
+    }
+
+    .button__options:checked ~ .container__label > .options__list{
+        background: var(--linear-blue);
+        color: var(--white);
+    }
+    .options__list {
+        padding: 2.5em 2em;
+    }
+    .menu__list__item:hover{
+        background: var(--linear-blue);
+    }
+    .menu__list__item:hover > .menu__list__link{
+        -webkit-text-fill-color: var(--white);
+        text-decoration: none;
+    }
+}
+
+@media screen and (min-width:1728px){
+    .container a{
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: black
+    }
+
+    .container__text {
+        display: block;
+    }
+
+    .header{
+        padding: 0 2em;
+    }
+
+    .options {
+        margin-right: auto;
+    }
+}
